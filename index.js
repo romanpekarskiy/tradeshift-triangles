@@ -5,7 +5,7 @@
  * @param {number} lengthC.
  * @return {object} triangle type informaton (scalene, equilateral, isosceles).
  */
-function getTriangleInfo(lengthA, lengthB, lengthC) {
+ function getTriangleInfo(lengthA, lengthB, lengthC) {
     if(lengthA === undefined || lengthB === undefined || lengthC === undefined){
         throw new getTriangleInfo.NotEnoughArgumentsError;
     }
@@ -18,7 +18,7 @@ function getTriangleInfo(lengthA, lengthB, lengthC) {
             throw new getTriangleInfo.WrongArgumentTypeError;
         }
 
-		// if one of edges length is zero - all 3 points in one line. This is not a triangle
+        // if one of edges length is zero - all 3 points in one line. This is not a triangle
         if(edgeLength == 0){
             throw new getTriangleInfo.ZeroNumberError;
         }
