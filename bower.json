@@ -1,0 +1,23 @@
+{
+  "name": "tradeshift-triangles-test",
+  "version": "0.0.0",
+  "authors": [
+    "Roman Pekarskiy <roman.pekarskiy@gmail.com>"
+  ],
+  "description": "Returns informarion about triangle",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "qunit": "~2.3.3"
+  }
+}

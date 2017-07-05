@@ -1,0 +1,14 @@
+{
+  "name": "tradeshift-triangles-test",
+  "version": "1.0.0",
+  "description": "Returns informarion about triangle",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "author": "Roman Pekarskiy",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.8.0"
+  }
+}
