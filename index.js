@@ -6,6 +6,8 @@
  * @return {object} triangle type informaton (scalene, equilateral, isosceles).
  */
  function getTriangleInfo(lengthA, lengthB, lengthC) {
+
+    // check that all arguments are passed
     if(lengthA === undefined || lengthB === undefined || lengthC === undefined){
         throw new getTriangleInfo.NotEnoughArgumentsError;
     }
@@ -14,12 +16,12 @@
 
     // check input types
     edgeLengths.forEach(edgeLength => {
-        if(typeof edgeLength != 'number'){
+        if(typeof edgeLength !== 'number'){
             throw new getTriangleInfo.WrongArgumentTypeError;
         }
 
         // if one of edges length is zero - all 3 points in one line. This is not a triangle
-        if(edgeLength == 0){
+        if(edgeLength === 0){
             throw new getTriangleInfo.ZeroNumberError;
         }
 
@@ -29,7 +31,7 @@
     })
 
     // sorting edge lengths from biggest to smallest
-    edgeLengths.sort((a,b) => a-b).reverse();
+    edgeLengths.sort((a,b) => a - b).reverse();
 
     // triangle edges must be connected. So we check this is possible.
     // if sum of 2 smallest edge lengths is smaller than bigger one - we cant connect them
@@ -39,11 +41,11 @@
 
     var triangleInfo = {};
 
-    if(edgeLengths[0] == edgeLengths[1] || edgeLengths[1] == edgeLengths[2]){
+    if(edgeLengths[0] === edgeLengths[1] || edgeLengths[1] === edgeLengths[2]){
         triangleInfo.isosceles = true;
     }
 
-    if(edgeLengths[0] == edgeLengths[2]){
+    if(edgeLengths[0] === edgeLengths[2]){
         triangleInfo.equilateral = true;
     }
 
