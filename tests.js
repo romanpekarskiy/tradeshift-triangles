@@ -28,21 +28,22 @@ QUnit.test("Test metdod throws wrong edge lenghts errors", function( assert ) {
 });
 
 QUnit.test("Test triangles", function( assert ) {
-    assert.deepEqual(getTriangleInfo(25, 15, 35),              {scalene: true});
-    assert.deepEqual(getTriangleInfo(25.12, 15.1234, 35.2134), {scalene: true});
-    assert.deepEqual(getTriangleInfo(0.2, 0.3, 0.4),           {scalene: true});
+    assert.equal(getTriangleInfo(25, 15, 35).scalene,               true);
+    assert.equal(getTriangleInfo(25.12, 15.1234, 35.2134).scalene,  true);
+    assert.equal(getTriangleInfo(0.2, 0.3, 0.4).scalene,            true);
 
-    assert.deepEqual(getTriangleInfo(25, 25, 25),        {isosceles: true, equilateral: true});
-    assert.deepEqual(getTriangleInfo(15, 15, 15),        {isosceles: true, equilateral: true});
-    assert.deepEqual(getTriangleInfo(0.56, 0.56, 0.56),  {isosceles: true, equilateral: true});
+    assert.equal(getTriangleInfo(25, 25, 25).equilateral,           true);
+    assert.equal(getTriangleInfo(25, 25, 25).isosceles,             true);
+    assert.equal(getTriangleInfo(15, 15, 15).equilateral,           true);
+    assert.equal(getTriangleInfo(0.56, 0.56, 0.56).equilateral,     true);
 
-    assert.deepEqual(getTriangleInfo(0.56, 0.56, 0.1),   {isosceles: true});
+    assert.equal(getTriangleInfo(0.56, 0.56, 0.1).isosceles,        true);
 
-    assert.deepEqual(getTriangleInfo(50, 50, 1),         {isosceles: true});
-    assert.deepEqual(getTriangleInfo(50, 1, 50),         {isosceles: true});
-    assert.deepEqual(getTriangleInfo(1, 50, 50),         {isosceles: true});
+    assert.equal(getTriangleInfo(50, 50, 1).isosceles,              true);
+    assert.equal(getTriangleInfo(50, 1, 50).isosceles,              true);
+    assert.equal(getTriangleInfo(1, 50, 50).isosceles,              true);
 
-    assert.deepEqual(getTriangleInfo(10, 10, 15),        {isosceles: true});
-    assert.deepEqual(getTriangleInfo(10, 15, 10),        {isosceles: true});
-    assert.deepEqual(getTriangleInfo(15, 10, 10),        {isosceles: true});
+    assert.equal(getTriangleInfo(10, 10, 15).isosceles,             true);
+    assert.equal(getTriangleInfo(10, 15, 10).isosceles,             true);
+    assert.equal(getTriangleInfo(15, 10, 10).isosceles,             true);
 });

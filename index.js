@@ -39,7 +39,11 @@
         throw new getTriangleInfo.WrongEdgeLenghtsError;
     }
 
-    var triangleInfo = {};
+    var triangleInfo = {
+        isosceles: false,
+        equilateral: false,
+        scalene: false,
+    };
 
     if(edgeLengths[0] === edgeLengths[1] || edgeLengths[1] === edgeLengths[2]){
         triangleInfo.isosceles = true;
